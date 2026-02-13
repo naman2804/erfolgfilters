@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erfolg Filters — Premium Filtration Solutions</title>
+    <meta name="description" content="Erfolg Filters provides high-quality filtration solutions for air, water, oil, and industrial applications.">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --blue-900: #0c2340;
+            --blue-700: #14375e;
+            --blue-600: #1a4a7a;
+            --blue-500: #2563a8;
+            --blue-400: #3b82c4;
+            --blue-100: #dbeafe;
+            --blue-50: #eff6ff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-300: #cbd5e1;
+            --gray-600: #475569;
+            --gray-800: #1e293b;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--gray-800);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(12, 35, 64, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--blue-400);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--blue-100);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--white);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 50%, var(--blue-600) 100%);
+            position: relative;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to top, var(--white), transparent);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--white);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            color: var(--blue-400);
+        }
+
+        .hero p {
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            color: var(--blue-100);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: var(--blue-400);
+            color: var(--white);
+            padding: 0.9rem 2.4rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .hero-btn:hover {
+            background: var(--blue-500);
+            transform: translateY(-2px);
+        }
+
+        /* GRID PATTERN (decorative) */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--blue-900);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray-600);
+            max-width: 550px;
+            margin: 0 auto 3rem;
+            font-size: 1.05rem;
+        }
+
+        /* SERVICES / WHAT WE DO */
+        .services {
+            background: var(--gray-50);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--blue-50);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .card-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--blue-500);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            color: var(--blue-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            color: var(--blue-900);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .about-text p {
+            color: var(--gray-600);
+            margin-bottom: 1rem;
+            font-size: 1.02rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .stat-box {
+            background: var(--blue-50);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-box .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--blue-500);
+        }
+
+        .stat-box .label {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            margin-top: 0.25rem;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: var(--blue-900);
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: var(--white);
+        }
+
+        .contact .section-subtitle {
+            color: var(--blue-100);
+            opacity: 0.85;
+        }
+
+        .email-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 10px;
+            padding: 1.25rem 2.5rem;
+            margin-top: 0.5rem;
+            transition: background 0.2s;
+        }
+
+        .email-box:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .email-box svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--blue-400);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .email-box a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .email-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--gray-800);
+            color: var(--gray-300);
+            text-align: center;
+            padding: 1.75rem 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1.25rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .stats {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .email-box {
+                padding: 1rem 1.5rem;
+            }
+
+            .email-box a {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">erfolg<span>filters</span></div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Premium <span>Filtration</span> Solutions You Can Trust</h1>
+            <p>Delivering high-performance air, water, and industrial filters engineered for reliability and efficiency.</p>
+            <a href="#contact" class="hero-btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">What We Do</h2>
+            <p class="section-subtitle">Comprehensive filtration products built to perform across industries.</p>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+                    </div>
+                    <h3>Air Filtration</h3>
+                    <p>HVAC and industrial air filters designed for maximum particulate capture and long service life.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                    </div>
+                    <h3>Water Filtration</h3>
+                    <p>Advanced water purification filters for residential, commercial, and industrial applications.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <h3>Industrial Filters</h3>
+                    <p>Heavy-duty oil, fuel, and hydraulic filters built to withstand demanding operating conditions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Built on Quality, Driven by Performance</h2>
+                    <p>At Erfolg Filters, we specialize in delivering filtration products that meet the highest standards of quality and durability. From air and water to oil and fuel, our filters are engineered for real-world performance.</p>
+                    <p>We partner with businesses across multiple industries to provide reliable filtration solutions that protect equipment, improve efficiency, and reduce downtime.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="number">500+</div>
+                        <div class="label">Products Available</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">50+</div>
+                        <div class="label">Industries Served</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">99%</div>
+                        <div class="label">Customer Satisfaction</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">24/7</div>
+                        <div class="label">Support Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Have a question or need a quote? Reach out to us directly.</p>
+            <div class="email-box">
+                <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+                <a href="mailto:info@erfolgfilters.com">info@erfolgfilters.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        &copy; 2026 Erfolg Filters. All rights reserved.
+    </footer>
+
+</body>
+</html>
